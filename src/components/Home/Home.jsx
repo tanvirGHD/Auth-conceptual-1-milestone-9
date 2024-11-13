@@ -7,8 +7,7 @@ import { authContext } from "../MainLayout/MainLayout";
 const Home = () => {
 
     const contextValue = useContext(authContext)
-    console.log(contextValue);
-    const {handleGoogleLogin, handleGithubLogin} = contextValue;
+    const {handleGoogleLogin, handleGithubLogin,handleLogout} = contextValue;
     
 
 
@@ -18,6 +17,7 @@ const Home = () => {
         <div>
             <button onClick={handleGoogleLogin}>Google Login</button>
             <button onClick={handleGithubLogin}>Github Login</button>
+            <button onClick={handleLogout}>Google Logout</button>
         </div>
     );
 };
