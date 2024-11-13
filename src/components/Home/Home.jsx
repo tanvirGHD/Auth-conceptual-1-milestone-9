@@ -1,19 +1,19 @@
-import { GoogleAuthProvider, GithubAuthProvider, signInWithPopup } from "firebase/auth";
-import auth from "../../firebase/firebase.config";
+
+
+import { useContext } from "react";
+import { authContext } from "../MainLayout/MainLayout";
 
 
 const Home = () => {
-    const googleProvider = new GoogleAuthProvider();
-    const githubProvider = new GithubAuthProvider();
 
-    const handleGoogleLogin = () =>{
-        signInWithPopup(auth, googleProvider)
-        .then(result => console.log(result))
-    }
-    const handleGithubLogin = () =>{
-        signInWithPopup(auth, githubProvider)
-        .then(result => console.log(result))
-    }
+    const contextValue = useContext(authContext)
+    console.log(contextValue);
+    const {handleGoogleLogin, handleGithubLogin} = contextValue;
+    
+
+
+
+
     return (
         <div>
             <button onClick={handleGoogleLogin}>Google Login</button>
